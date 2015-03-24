@@ -1,0 +1,8 @@
+{
+  "name": "reactTodo",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "http-server": "0.8.0"
+  }
+}

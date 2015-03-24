@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<div id="container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script type="text/jsx">
+
+    var FancyButton = React.createClass({
+        render: function() {
+            return <button onClick={this.props.onClick}>
+                <i className={"fa " + this.props.icon}></i>
+                <span>{this.props.text}</span>
+            </button>
+        }
+    });
+
+
+    var HelloWorld = React.createClass({
+        getInitialState: function(){
+          console.log("getInitialState");
+            return {
+                counter: 0
+            };
+        },
+        componentWillMount: function(){
+          console.log("componentWillMount");
+        },
+        increment: function() {
+            this.setState({ counter: this.state.counter+1 });
+        },
+        render: function() {
+            return (
+                   <div>
+                     <div>{this.state.counter}</div>
+                     <FancyButton onClick={this.increment} icon="fa-arrow-circle-o-up" text="Increment!"></FancyButton>
+                   </div>
+                   );
+        }
+    });
+
+    React.render(<HelloWorld name="caa"/>,
+            document.getElementById('container'));
+
+</script>
+</body>
+</html>
